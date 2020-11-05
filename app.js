@@ -23,6 +23,7 @@ app.use(rutas);
 app.use(express.static(path.join(__dirname, 'public')));
 
 sistemaAsistenciasBD.conexion();
+sistemaAsistenciasBD.guardar();
 
 app.listen(app.get("port"), () =>{
     console.log('Servidor en el puerto 3000')
