@@ -1,0 +1,28 @@
+{
+  "name": "sistema-de-asistencia",
+  "version": "1.0.0",
+  "description": "Pendiente",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maairiim/Sistema-de-Asistencia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maairiim/Sistema-de-Asistencia/issues"
+  },
+  "homepage": "https://github.com/maairiim/Sistema-de-Asistencia#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
