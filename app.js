@@ -3,7 +3,6 @@ const app = express();
 
 const path = require("path");
 const rutas = require("./rutas/index");
-const sistemaAsistenciasBD = require('./bd/conexion');
 const bodyParser = require("body-parser");
 
 //Configuraciones
@@ -24,8 +23,6 @@ app.use(rutas);
 //static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-sistemaAsistenciasBD.conexion();
-sistemaAsistenciasBD.guardar();
 
 app.listen(app.get("port"), () =>{
     console.log('Servidor en el puerto 3000')
