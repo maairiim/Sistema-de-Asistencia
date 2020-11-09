@@ -5,7 +5,7 @@ var maestroSchema = mongoose.Schema({
     nombre: String,
     apellido: String,
     correo: String,
-    contraseña: String
+    contrasena: String
 });
 
 const schemas = {

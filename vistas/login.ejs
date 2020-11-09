@@ -1,0 +1,35 @@
+<%- include ('fragmentos/head.ejs')%>
+    <header>
+        <a href="/">Control de asistencia</a>
+    </header>
+
+    
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col">
+                <h1>Bienvenido(a)</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col ">
+                <h2>Iniciar sesión</h2>
+                <img src="img/Login.png" alt="">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col">
+                <form method="POST" action="" >
+                    <input type="text"     name="email"     class=" col-lg-6 form-control" placeholder="Ingrese su correo"> 
+                    <br>
+                    <input type="password" name="password"  class=" col-lg-6 form-control" placeholder="Ingrese su contraseña">
+                    <br>
+                    <input type="submit" value="Iniciar sesión"class="btn btn-secundary">
+                    <input type="submit" value="Registrarse"   class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+
+<%- include ('fragmentos/footer.ejs')%>
+
+    

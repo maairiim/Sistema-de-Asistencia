@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 //Configuraciones
 app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname,"vistas"));
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //middlewares
 app.use((req,res,next) =>{
