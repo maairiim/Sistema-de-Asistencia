@@ -1,0 +1,15 @@
+<%- include ('fragmentos/head.ejs')%>
+
+
+
+    <h1>Aqui va el visualizador</h1>
+    <% if(isAuthenticated){  %>
+    <p>
+        usuario logueado: <%=  user.nombre %>
+    </p>
+    <% } %>
+
+
+
+
+<%- include ('fragmentos/footer.ejs')%>

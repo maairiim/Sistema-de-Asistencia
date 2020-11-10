@@ -6,7 +6,7 @@ var maestroSchema = mongoose.Schema({
     apellido: String,
     correo: String,
     contrasena: String
-});
+},{collection : 'maestros'});
 
 const schemas = {
     Maestro: mongoose.model('Maestro',maestroSchema)

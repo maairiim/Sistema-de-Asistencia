@@ -46,12 +46,6 @@ const sistemaAsistenciasBD = {
             return ""
         });
         
-    },
-
-    buscarMaestro: function(){
-        
-
-    
     }
 
 }

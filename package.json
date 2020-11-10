@@ -19,8 +19,15 @@
   },
   "homepage": "https://github.com/maairiim/Sistema-de-Asistencia#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.12"
+    "express-session": "^1.17.1",
+    "mongoose": "^5.10.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
