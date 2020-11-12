@@ -27,17 +27,22 @@ module.exports = {
 
         try {
             sistemaAsistenciasBD.registrarMaestro(maestro.nombre, maestro.apellido, maestro.email, password);
-            res.render('registro',{ mensaje: 'El usuasrio fue guardado' });
+            res.render('registro',{
+                mensaje:"La neta chavo si quedó",
+                isAuthenticated: req.isAuthenticated(),
+                user: req.user
+            });
     
         } catch (error) {
             console.log(error);
-            res.render('registro',{ mensaje: mensaje });
+            res.render('registro',{ mensaje: "" });
         }
     },
     getLogin: function (req, res) {
         res.render('login',{
             isAuthenticated: req.isAuthenticated(),
-            user: req.user
+            user: req.user,
+            mensaje:""
         });
         
     },

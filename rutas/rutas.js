@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const controladores = require('../controles');
 const passport = require('passport');
-const autenticador = require('../middleware/autenticacion')
+const autenticador = require('../middleware/autenticacion');
+
+
 router.get("/", autenticador.estaLogueado , controladores.visualizadorController.index);
 
 router.get("/registro", controladores.usuarioController.getSignup);
@@ -17,5 +19,6 @@ router.post("/login", passport.authenticate('local',{
 
 
 router.get('/logout',controladores.usuarioController.logout);
+
 
 module.exports = router;

@@ -2,12 +2,69 @@
 
 
 
-    <h1>Aqui va el visualizador</h1>
-    <% if(isAuthenticated){  %>
-    <p>
-        usuario logueado: <%=  user.nombre %>
-    </p>
-    <% } %>
+<h1>Aqui va el visualizador</h1>
+<% if(isAuthenticated){  %>
+<p>
+    usuario logueado: <%=  user.nombre %>
+</p>
+<% } %>
+<div class="border col" style="overflow-x: scroll;  width:100%;">
+    <table class="table table-hover table-sm justify-content-center">
+        <thead>
+            <tr>
+                <td></td>
+                <td></td>
+                <th colspan="8">Unidad 4</th>
+                <th colspan="8">Unidad 5</th>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th class="campoPersonalizado" scope="col" style="width: 20%;">Nombre</th>
+                <% for(var i=0;i<30; i++){ %>
+                <th scope="col">
+                    <button type="button" class="btn btn-light"> <%= " 00000" +  i %>    </button>
+                </th>
+                        
+                   
+                <% } %>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% for(var i=0;i<15; i++){ %>
+                <tr>
+                    <th scope="row"><%= i %></th>
+                    <td>Ana Miriam Rios Leyva</td>
+                    <td>X</td>
+                    <td>O</td>
+                </tr>
+                <% } %>
+           
+            <tr>
+                <th scope="row">1</th>
+                <td>Ana Miriam Rios Leyva</td>
+                <td>X</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>Ana Miriam Rios Leyva</td>
+                <td>X</td>
+                <td>O</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<style>
+    th.campoPersonalizado{
+        width: 20%;
+        padding-right: 10em;
+    }
+</style>
+
 
 
 
