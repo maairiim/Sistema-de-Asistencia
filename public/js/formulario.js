@@ -85,7 +85,7 @@ inputs.forEach((input) => {
     input.addEventListener('blur', validarFormulario);
 });
 
-/* formulario.addEventListener('submit', (e)=>{
+formulario.addEventListener('submit', (e)=>{
     e.preventDefault();
 
     if(campos.nombre && campos.apellido && campos.email && campos.password){
@@ -98,8 +98,11 @@ inputs.forEach((input) => {
 
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
-        })
+        });
+        document.getElementById("formulario").submit();
     }else{
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
-});**/
+});
+
+
