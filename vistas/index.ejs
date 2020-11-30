@@ -2,12 +2,15 @@
 
 
 
-<h1>Aqui va el visualizador</h1>
+<h1>Visualizador</h1>
 <% if(isAuthenticated){  %>
 <p>
     usuario logueado: <%=  user.nombre %>
 </p>
 <% } %>
+<h2 id="grupo">Grupo </h2>
+
+
 <div class="border col" style="overflow-x: scroll;  width:100%;">
     <table class="table table-hover table-sm justify-content-center">
         <thead>
@@ -55,7 +58,24 @@
         </tbody>
     </table>
 </div>
+<div>
+    <div>
+        <select id="select">
+            <option value="value2" selected>Seleccione un grupo</option>
 
+            <% for(var i=0 ; i < grupos.length; i++){ %>
+                <% var grupo = grupos[i] %>
+                <option value="value1"><%= (grupo.materia +" "+ grupo.dias + " | " + grupo.hora ) %></option> 
+
+            <% } %>
+            <option value="value3">Grupo 3</option>
+          </select>
+    </div>
+    <div>
+        <input type="button" value="Agregar asistencias">
+        <input type="button" value="Gestionar asistencias">
+    </div>
+</div>
 
 
 <style>
@@ -65,7 +85,16 @@
     }
 </style>
 
+<script>
+    document.getElementById('select').addEventListener('change', (e)=>{
+        e.preventDefault();
+        console.log("Escucho");
+        let combo =document.getElementById("select");
+        let selected = combo.options[combo.selectedIndex].text;
+        document.getElementById("grupo").textContent = selected;
 
+    }, false); 
+</script>
 
 
 

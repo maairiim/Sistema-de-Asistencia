@@ -89,6 +89,7 @@ formulario.addEventListener('submit', (e)=>{
     e.preventDefault();
 
     if(campos.nombre && campos.apellido && campos.email && campos.password){
+        document.getElementById("formulario").submit();
         formulario.reset();
 
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -99,7 +100,7 @@ formulario.addEventListener('submit', (e)=>{
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
         });
-        document.getElementById("formulario").submit();
+        
     }else{
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }

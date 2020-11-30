@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const schemas = require('./schemas');
 const uri = "mongodb+srv://maairiim:123456root@nuevocluster.ocj5q.mongodb.net/SistemaAsistencias?retryWrites=true&w=majority";
 
+
 const sistemaAsistenciasBD = {
     /**
      * Método conexion, para conectar con la base de datos
@@ -43,10 +44,58 @@ const sistemaAsistenciasBD = {
         nuevoMaestro.save(function(err){
             if(err) return err;
             console.log('documento guardado');
-            return ""
         });
         
+    },
+    buscarCorreo: function(email){
+        let correcto=false;
+        let maestro = schemas.Maestro;
+        maestro.find({correo:email}).exec(function(err, maestros){
+            if(err){
+                console.log("Ocurrio un error");
+            }
+            else{
+                if(maestro.correo == email){
+                    console.log();
+                    return correcto = true;
+
+                }
+                correcto = true;
+                return true;
+            }
+        });
+        return correcto;
+    },
+
+    obtenerLista: function(grupo){
+        let listaAsistencias;
+
+    },
+
+    obtenerGrupos: async function(maestro){
+        let listaGrupos = schemas.Grupo;
+        let lista = await listaGrupos.find({maestro: maestro.id}).exec();
+        return lista;
+    },
+
+    agreagrGrupo: function(maestroId){
+        let Grupo = schemas.Grupo;
+        let nuevoGrupo = new Grupo({
+            materia: "Materia 1",
+            hora: "1:00 - 3:00",
+            dias: ["Martes","Jueves"],
+            maestro: maestroId
+        });
+        /*
+        this.conexion();
+        nuevoGrupo.save(function(err){
+            if(err) return err;
+            console.log('grupo guardado');
+        });*/
     }
+
+
+
 
 }
 

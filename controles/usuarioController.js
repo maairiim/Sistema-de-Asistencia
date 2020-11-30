@@ -27,6 +27,7 @@ module.exports = {
 
         try {
             sistemaAsistenciasBD.registrarMaestro(maestro.nombre, maestro.apellido, maestro.email, password);
+
             res.render('registro',{
                 mensaje:"La neta chavo si quedó",
                 isAuthenticated: req.isAuthenticated(),
@@ -35,7 +36,7 @@ module.exports = {
     
         } catch (error) {
             console.log(error);
-            res.render('registro',{ mensaje: "" });
+            res.render('registro',{ mensaje: "Ocurrió un error" });
         }
     },
     getLogin: function (req, res) {

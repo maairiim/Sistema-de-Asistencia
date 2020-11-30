@@ -27,9 +27,11 @@ module.exports = function(passport){
                 if(bcrypt.compareSync(password,usuario.contrasena)){
                     console.log("Contraseña correcta");
                     return done(null, {
+                        id: usuario._id,
                         nombre: usuario.nombre,
                         apellido: usuario.apellido,
-                        correo: usuario.correo
+                        correo: usuario.correo,
+                        grupos: {}
                     });
                 }
 

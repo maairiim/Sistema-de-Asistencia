@@ -8,8 +8,25 @@ var maestroSchema = mongoose.Schema({
     contrasena: String
 },{collection : 'maestros'});
 
+var grupoSchema = mongoose.Schema({
+    materia: String,
+    hora: String,
+    dias: Array,
+    maestro: { type: mongoose.Schema.ObjectId, ref: "maestros"}
+},{collection : 'grupos'});
+
+var paseListaSchema = mongoose.Schema({
+    fecha: Date,
+    alumnnos:Array,
+    asistencias: String,
+    grupo: { type: mongoose.Schema.ObjectId, ref: "grupos"}
+},{collection : 'paseLista'});
+
+
 const schemas = {
-    Maestro: mongoose.model('Maestro',maestroSchema)
+    Maestro: mongoose.model('Maestro',maestroSchema),
+    Grupo: mongoose.model('Grupo',grupoSchema),
+    PaseLista: mongoose.model('PaseLista', paseListaSchema)
 }
 
 
