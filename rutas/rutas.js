@@ -21,7 +21,9 @@ router.post("/login", passport.authenticate('local',{
 
 router.get('/logout',controladores.usuarioController.logout);
 
-router.get('/agregarGrupo', controladores.gruposController.grupos);
+router.get('/agregarGrupo', controladores.gruposController.getGrupos);
+
+
 
 
 module.exports = router;

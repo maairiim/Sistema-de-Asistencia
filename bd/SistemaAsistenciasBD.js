@@ -77,6 +77,9 @@ const sistemaAsistenciasBD = {
     obtenerGrupos: async function(maestro){
         let listaGrupos = schemas.Grupo;
         let lista = await listaGrupos.find({maestro: maestro.id}).exec();
+        if(lista == null ){
+            return false;
+        }
         return lista;
     },
 
