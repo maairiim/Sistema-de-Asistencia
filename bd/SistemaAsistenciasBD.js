@@ -67,8 +67,10 @@ const sistemaAsistenciasBD = {
         return correcto;
     },
 
-    obtenerLista: function(grupo){
-        let listaAsistencias;
+    obtenerListaAsistencias: async function(grupo){
+        let listaAsistencias = schemas.PaseLista;
+        let lista = await listaAsistencias.find({grupo: grupo._id}).sort('').exec();
+        return lista;
 
     },
 

@@ -17,8 +17,8 @@ var grupoSchema = mongoose.Schema({
 
 var paseListaSchema = mongoose.Schema({
     fecha: Date,
-    alumnnos:Array,
-    asistencias: String,
+    alumnos: Array,
+    asistencias: Array,
     grupo: { type: mongoose.Schema.ObjectId, ref: "grupos"}
 },{collection : 'paseLista'});
 

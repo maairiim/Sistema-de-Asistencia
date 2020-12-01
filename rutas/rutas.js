@@ -21,5 +21,9 @@ router.post("/login", passport.authenticate('local',{
 
 router.get('/logout',controladores.usuarioController.logout);
 
+router.get('/agregarAsistencias', (req , res) => {
+    res.render('',);
+});
+
 
 module.exports = router;
