@@ -22,6 +22,7 @@ router.post("/login", passport.authenticate('local',{
 router.get('/logout',controladores.usuarioController.logout);
 
 router.get('/agregarGrupo', controladores.gruposController.getGrupos);
+router.get('/gestionarAsistencias', controladores.gruposController.getGestionarAsistencia);
 
 
 
