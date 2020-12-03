@@ -2,9 +2,9 @@
 <%- include ('fragmentos/head.ejs')%>
 
 
-<h1>gestionarAsistencias</h1>
+<h1>GestionarAsistencias</h1>
 
-<h2 id="grupo">Gestionar asistencias</h2>
+<h2 id="grupo"></h2>
 
 <form action="/GestionarAsistencias" method="POST">
 <div class="border col" style="overflow-x: scroll;  width:100%;">
@@ -13,19 +13,16 @@
             <tr>
                 <td></td>
                 <td></td>
+                <div class="row form-group">
                 <th colspan="8">Nombre del alumno</th>
+            </div>
+            <div class="row form-group">
                 <th colspan="8">Asistencia</th>
+                </div>
             </tr>
             <tr>
                 <th scope="col">#</th>
-                <th class="campoPersonalizado" scope="col" style="width: 20%;">Nombre</th>
-                <% for(var i=0;i<30; i++){ %>
-                <th scope="col">
-                    <button type="button" class="btn btn-light"> <%= " 00000" +  i %>    </button>
-                </th>
-                        
-                   
-                <% } %>
+                <th class="campoPersonalizado" scope="col" style="width: 20%;"></th>
             </tr>
         </thead>
 
@@ -33,53 +30,46 @@
             <% for(var i=0;i<15; i++){ %>
                 <tr>
                     <th scope="row"><%= i %></th>
-                    <td>Ana Miriam Rios Leyva</td>
+                    <td>Ana Miriam Rios Leyva    <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br> </td>                                                                         
                   
                 </tr>
                 <% } %>
            
             <tr>
                 <th scope="row">1</th>
-                <td>Ana Miriam Rios Leyva</td>
+                <td>Ana Miriam Rios Leyva    <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br> </td>
               
             </tr>
             <tr>
                 <th scope="row">1</th>
-                <td>Ana Miriam Rios Leyva</td>
+                <td>Ana Miriam Rios Leyva   <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br> </td>
              
+                
             </tr>
+        
+            </div>
+
+      
+     
         </tbody>
-        <div class="row form-group">  
-          <div class="col-md-7">
-      <div class="Dias que imparte la materia" id="Dias que imparte la materia">
-<label for="Dias que imparte la materia" class="Dias que imparte la materia">Dias que imparte la materia </label>
-          <div class="Dias que imparte la materia">
-           
-                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br>
-                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br>
-                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br>
-                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br>
-                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br>
-                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> </label><br>
-             
-              </div>
-      </div>
+       
   </div>
 </div>
     </table>
 </div>
 <div>
     <div>
-      <input type="text" size="15" maxlength="30" onclick="hizoClick()" value="Nombre" name="nombre">
+      <input type="text" size="15" maxlength="30"  value="" name="">
 
       <script>
         function hizoClick() {
           alert("Enviado");
         }
         </script>        
+
     </div>
     <div>
-      <input type="reset" value="borrar informacion"  id= "RESET">
+      <input type="reset" value="Anadir Comentario" onclick="hizoClick()" id= "RESET">
     </div>
 </div>
 
