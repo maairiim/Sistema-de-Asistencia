@@ -8,18 +8,22 @@ module.exports = {
         })
     }, 
     postGrupos: function (req, res){
-        res.render('',{
+        console.log(req.body);
+        //sistemaAsistenciasBD.agreagrGrupo(maestroId, materia, hora, dias, unidades);
+
+
+        res.render('/index',{
             isAuthenticated: req.isAuthenticated(),
             user: req.user
         });
 
     },
-    getAñadirAsistencia: function (req, res) {
+    getAnadirAsistencia: function (req, res) {
         res.render('',{
 
         });
     },
-    postAñadirAsistencia: function (req, res) {
+    postAnadirAsistencia: function (req, res) {
         res.render('',{
 
         });
