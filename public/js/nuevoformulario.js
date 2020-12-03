@@ -1,15 +1,15 @@
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
+const formulario = document.getElementById('formularios');
+const inputs = document.querySelectorAll('#formularios input');
 
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
-	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ 
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ 
 }
 
 const campos = {
-    nombre: false,
+    nombre: false, 
     apellido: false,
     password: false,
     email: false
@@ -18,8 +18,8 @@ const campos = {
 const validarFormulario = (e) => {
 
     switch (e.target.name){
-        case "nombre":
-            validarCampo(expresiones.nombre, e.target, 'nombre');
+        case "Nombre":
+            validarCampo(expresiones.nombre, e.target, 'Nombre');
         break;
 
         case "apellido":
@@ -41,7 +41,7 @@ const validarFormulario = (e) => {
     }
 }
 
-const validarCampo = (expresion, input, campo) => { 
+const validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
         document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
@@ -88,7 +88,7 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e)=>{
     e.preventDefault();
 
-    if(campos.nombre && campos.apellido && campos.email && campos.password){ 
+    if(campos.nombre && campos.apellido && campos.email && campos.password){
         document.getElementById("formulario").submit();
         formulario.reset();
 
@@ -105,5 +105,3 @@ formulario.addEventListener('submit', (e)=>{
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
 });
-
-

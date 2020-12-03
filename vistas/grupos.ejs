@@ -1,3 +1,6 @@
+<%- include ('fragmentos/head.ejs')%>
+    
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,16 +20,19 @@
     <div class="container">
         <div class="row">
         <div class="col-md-7">
-            <h1 class="display-4">Anadir Grupo</h1>
+            <h1 class="display-4">Añadir Grupo</h1>
          <hr class="bg-info">
-         <form action="/agregargrupo" method="POST">  
+         <form action="/agregargrupo" method="POST" class="formularios" id="formularios">  
   
             <div class="row form-group">   
     <label for="Nombre" class="col-form-label col-md-4">Nombre De La Materia</label> 
-         <div class="col-md-8">
+         <div class="col-md-8"> 
              <input type="text" name="NombreDeLaMateria" value="" id="NombreDeLaMateria" class="form-control">
+             <i class="formulario__validacion-estado fas fa-times-circle"></i>
          </div>
+         <p class="formulario__input-error">El nombre de usuario debe ser de 4 a 16 caracteres</p>
                 </div>
+
                    <div class="row form-group">  
                     <div class="col-md-7">
                 <div class="Dias que imparte la materia" id="Dias que imparte la materia">
@@ -141,3 +147,5 @@
     -->
   </body>
 </html>
+
+<%- include ('fragmentos/footer.ejs')%>
