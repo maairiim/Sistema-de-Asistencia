@@ -24,7 +24,17 @@ module.exports = {
 
         });
         
+    },
+
+    getGestionarAsistencia: function (req, res) {
+        res.render('GestionarAsistencia',{
+            isAuthenticated: req.isAuthenticated(),
+            user: req.user
+        });
+        
     }
+
+    
     
 
 }
