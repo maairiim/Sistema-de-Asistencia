@@ -1,5 +1,5 @@
-const formulario = document.getElementById('formularios');
-const inputs = document.querySelectorAll('#formularios input');
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -18,8 +18,8 @@ const campos = {
 const validarFormulario = (e) => {
 
     switch (e.target.name){
-        case "Nombre":
-            validarCampo(expresiones.nombre, e.target, 'Nombre');
+        case "nombreMateria":
+            validarCampo(expresiones.nombre, e.target, 'nombreMateria');
         break;
 
         case "apellido":
