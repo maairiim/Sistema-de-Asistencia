@@ -1,4 +1,6 @@
 const sistemaAsistenciasBD = require('../bd/SistemaAsistenciasBD');
+const fs = require('fs');
+const multer = require('multer');
 
 module.exports = {
     getGrupos: function (req, res) {
@@ -19,15 +21,28 @@ module.exports = {
 
     },
     getAnadirAsistencia: function (req, res) {
-        res.render('',{
-
+        res.render('agregarAsistencias',{
+            isAuthenticated: req.isAuthenticated(),
+            user: req.user
         });
     },
     postAnadirAsistencia: function (req, res) {
-        res.render('',{
+        //Agregar extension 
+        let storage =   multer.diskStorage({
+            destination: './uploads',
+            filename: function (req, file, callback) {
+              callback(null, file.originalname);
+            }
+          });
 
+        var upload = multer({ storage : storage}).single('archivo');
+        upload(req,res,function(err) {
+            if(err) {
+                console.log(err);
+                return res.end("Error uploading file.");
+            }
+            res.end("File is uploaded");
         });
-        
     },
 
     getGestionarAsistencia: function (req, res) {
@@ -42,3 +57,5 @@ module.exports = {
     
 
 }
+
+

@@ -69,7 +69,7 @@ const sistemaAsistenciasBD = {
 
     obtenerListaAsistencias: async function(grupo){
         let listaAsistencias = schemas.PaseLista;
-        let lista = await listaAsistencias.find({grupo: grupo._id}).sort('').exec();
+        let lista = await listaAsistencias.find({grupo: grupo._id}).exec();
         return lista;
 
     },

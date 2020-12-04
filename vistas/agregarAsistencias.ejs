@@ -1,17 +1,9 @@
 <%- include ('fragmentos/head.ejs')%>
+<h1>Agregar ASistencias | Archivo</h1>
 
-<form action="" method="post" enctype="multipart/form-data" target="_blank">
-    <p>
-  
-      Sube un archivo:
-  
-      <input type="file" name="archivosubido">
-  
-      <input type="submit" value="Enviar datos">
-  
-    </p>
-  
-  </form>
-
+<form action="/agregarAsistencia" method='POST' enctype='multipart/form-data'>
+  <input type="file" name="archivo" >
+  <input type="submit" value="Subir archivo">
+</form>
 
 <%- include ('fragmentos/footer.ejs')%>
