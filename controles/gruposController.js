@@ -12,7 +12,7 @@ module.exports = {
     postGrupos: function (req, res){
         console.log(req.body);
         //sistemaAsistenciasBD.agreagrGrupo(maestroId, materia, hora, dias, unidades);
-        res.render('/',{
+        res.render('index',{
             isAuthenticated: req.isAuthenticated(),
             user: req.user
         });

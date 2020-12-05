@@ -16,30 +16,34 @@ require('./passport/passport')(passport);
 app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname,"vistas"));
 app.set("view engine", "ejs");
+    app.use((req,res,next) =>{
+        console.log(`${req.url} - ${req.method}`);
+        next();
+    });
+    app.use(bodyParser.urlencoded({ extended: false }));
+    
+    
+    app.use(cookieParser());
+    app.use(session({
+        secret:'secret', //recuperar variable de sesion
+        resave:false,
+        saveUninitialized: false
+    }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    
+    //rutas
+    app.use(rutas);
+    
+    //static files
+    app.use(express.static(path.join(__dirname, 'public')));
 
+    app.use(redirectUnmatched);
 
 //middlewares
-app.use((req,res,next) =>{
-    console.log(`${req.url} - ${req.method}`);
-    next();
-});
-app.use(bodyParser.urlencoded({ extended: false }));
-
-
-app.use(cookieParser());
-app.use(session({
-    secret:'secret', //recuperar variable de sesion
-    resave:false,
-    saveUninitialized: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-
-//rutas
-app.use(rutas);
-
-//static files
-app.use(express.static(path.join(__dirname, 'public')));
+function redirectUnmatched(req, res) { 
+    res.redirect("/"); 
+} 
 
 
 app.listen(app.get("port"), () =>{
