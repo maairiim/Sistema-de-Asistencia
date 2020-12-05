@@ -12,9 +12,7 @@ module.exports = {
     postGrupos: function (req, res){
         console.log(req.body);
         //sistemaAsistenciasBD.agreagrGrupo(maestroId, materia, hora, dias, unidades);
-
-
-        res.render('/index',{
+        res.render('/',{
             isAuthenticated: req.isAuthenticated(),
             user: req.user
         });
@@ -41,7 +39,8 @@ module.exports = {
                 console.log(err);
                 return res.end("Error uploading file.");
             }
-            res.end("File is uploaded");
+            
+            controles.visualizadorController.index;
         });
     },
 
