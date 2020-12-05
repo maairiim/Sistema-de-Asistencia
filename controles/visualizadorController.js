@@ -23,15 +23,15 @@ module.exports = {
 
                     console.log(resPaseLista);
                     respuesta.render('index',{
-                        isAuthenticated: req.isAuthenticated(),
+                        isAuthenticated: req.isAuthenticated(), 
                         user: req.user,
                         grupos: resGrupos,
-                        paseLista: resPaseLista
+                        paseLista: resPaseLista 
                     });
     
                 }).catch(err => console.log(err));
             }
-        }).catch(err => console.log(err));
+        }).catch(err => console.log(err)); 
 
         
     }

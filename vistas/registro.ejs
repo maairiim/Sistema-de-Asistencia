@@ -1,11 +1,11 @@
 <%- include ('fragmentos/head.ejs')%>
-<link rel="stylesheet" type="text/css" href="css/formularios.css">
+<link rel="stylesheet" type="text/css" href="css/formularios.css"> 
 
 <div class="container-fluid ">
     <div class="row">
         <div class="col">
             <h2>Registro de Usuario</h2>
-            <img src="img/Login.png" alt="">
+            <img src="img/Login.png" alt=""> 
         </div>
     </div>
     <form action="/registro" method= "POST" class="formulario" id="formulario">
@@ -25,7 +25,7 @@
                     <input type="text" name="apellido" class=" col-lg-6 form-control" id="apellido" placeholder="Apellido Paterno"required><br>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
-                <p class="formulario__input-error">El nombre de usuario debe ser de 4 a 16 caracteres</p>
+                <p class="formulario__input-error">El apellido de usuario debe ser de 4 a 16 caracteres</p>
             </div>
             
             <div class="formulario__grupo" id="grupo__email">
@@ -34,7 +34,7 @@
                     <input type="text" name="email" class=" col-lg-6 form-control" id="email" placeholder="ej: abelardo@gutierrez.com"required><br>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
-                <p class="formulario__input-error">El nombre de usuario debe ser de 4 a 16 caracteres</p>
+                <p class="formulario__input-error">El correo debe tener formato de correo</p>
             </div>
             <!-- Grupo: contraseña-->
             <div class="formulario__grupo" id="grupo__password">

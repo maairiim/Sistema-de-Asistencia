@@ -5,7 +5,7 @@ const passport = require('passport');
 const autenticador = require('../middleware/autenticacion');
 
 
-router.get("/", autenticador.estaLogueado , controladores.visualizadorController.index);
+router.get("/", autenticador.estaLogueado , controladores.visualizadorController.index); 
 
 
 
