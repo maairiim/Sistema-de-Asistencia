@@ -2,13 +2,20 @@ const sistemaAsistenciasBD = require('../bd/SistemaAsistenciasBD');
 const fs = require('fs');
 const multer = require('multer');
 
+
 module.exports = {
+    ///---------------------- GET agregarGrupos
     getGrupos: function (req, res) {
-        res.render('grupos',{
-            isAuthenticated: req.isAuthenticated(),
-            user: req.user
-        })
+        if(req.isAuthenticated()){
+            res.render('grupos',{
+                isAuthenticated: req.isAuthenticated(),
+                user: req.user
+            });
+        }
+        res.redirect('/');
+        
     }, 
+    ///---------------------- POST agregarGrupos
     postGrupos: function (req, res){
         console.log(req.body);
         //sistemaAsistenciasBD.agreagrGrupo(maestroId, materia, hora, dias, unidades);
@@ -18,12 +25,20 @@ module.exports = {
         });
 
     },
+
+    ///---------------------- GET agregarAsistencia 
     getAnadirAsistencia: function (req, res) {
-        res.render('agregarAsistencias',{
-            isAuthenticated: req.isAuthenticated(),
-            user: req.user
-        });
+        if(req.isAuthenticated()){
+            res.render('agregarAsistencias',{
+                isAuthenticated: req.isAuthenticated(),
+                user: req.user
+            });
+        }
+        res.redirect('/');
+        
     },
+
+    ///---------------------- POST agregarAsistencia 
     postAnadirAsistencia: function (req, res) {
         //Agregar extension 
         let storage =   multer.diskStorage({
@@ -44,11 +59,17 @@ module.exports = {
         });
     },
 
+    ///---------------------- GET gestionarAsistencia
     getGestionarAsistencia: function (req, res) {
-        res.render('GestionarAsistencia',{
-            isAuthenticated: req.isAuthenticated(),
-            user: req.user
-        });
+        if(req.isAuthenticated()){
+            res.render('GestionarAsistencia',{
+                isAuthenticated: req.isAuthenticated(),
+                user: req.user
+            });
+            
+        }
+        res.redirect('/');
+        
         
     }
 
