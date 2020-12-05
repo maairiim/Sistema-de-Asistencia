@@ -4,9 +4,10 @@ const path = require("path");
 const rutas = require("./rutas/rutas");
 const bodyParser = require("body-parser");
 const session = require('express-session');
-const cookieParse = require('cookie-parse');
+
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
+
 
 require('./passport/passport')(passport);
 
@@ -33,6 +34,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 //rutas
 app.use(rutas);
 

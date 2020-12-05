@@ -12,6 +12,7 @@ var grupoSchema = mongoose.Schema({
     materia: String,
     hora: String,
     dias: Array,
+    unidades: Array,
     maestro: { type: mongoose.Schema.ObjectId, ref: "maestros"}
 },{collection : 'grupos'});
 

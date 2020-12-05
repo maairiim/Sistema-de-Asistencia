@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
 
-    <a class="navbar-brand " href="/">Sistema de asistenciass</a>
+    <a class="navbar-brand " href="/">Sistema de asistencias</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" 
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
@@ -22,11 +22,17 @@
         <% if(isAuthenticated){  %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%=  user.nombre + " "+ user.apellido %>
+            Menú
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Perfil</a>
+            
+            <!--       <a class="dropdown-item" href="#">Perfil</a>     -->
+            <a class="dropdown-item" href="/">Home</a>
+            <a class="dropdown-item" href="/agregarGrupo">Agregar grupo</a>
+            <a class="dropdown-item" href="/gestionarasistencias">Gestionar asistencias</a>
+            <a class="dropdown-item" href="/agregarAsistencia">Agregar asistencia</a>
             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#"><%=  user.nombre + " "+ user.apellido %></a><br>
             <a class="dropdown-item" href="/logout">Cerrar sesión</a>
           </div>
         </li>

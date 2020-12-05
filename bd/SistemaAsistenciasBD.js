@@ -69,7 +69,7 @@ const sistemaAsistenciasBD = {
 
     obtenerListaAsistencias: async function(grupo){
         let listaAsistencias = schemas.PaseLista;
-        let lista = await listaAsistencias.find({grupo: grupo._id}).sort('').exec();
+        let lista = await listaAsistencias.find({grupo: grupo._id}).exec();
         return lista;
 
     },
@@ -83,20 +83,20 @@ const sistemaAsistenciasBD = {
         return lista;
     },
 
-    agreagrGrupo: function(maestroId){
+    agreagrGrupo: function(maestroId, materia, hora, dias, unidades){
         let Grupo = schemas.Grupo;
         let nuevoGrupo = new Grupo({
-            materia: "Materia 1",
-            hora: "1:00 - 3:00",
-            dias: ["Martes","Jueves"],
+            materia: materia,
+            hora: hora,
+            dias: dias,
+            unidades: unidades,
             maestro: maestroId
         });
-        /*
         this.conexion();
         nuevoGrupo.save(function(err){
             if(err) return err;
             console.log('grupo guardado');
-        });*/
+        });
     }
 
 
